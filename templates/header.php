@@ -9,7 +9,36 @@ $name=$_SESSION['username']??'Guest';
 	<title>Ninja Pizza</title>
 	<!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style type="text/css">
+	.delbt{
+		display:flex;
+		flex-wrap:wrap;
+		height:100px;
+	}
+	.btnt {
+		background-color: white; /* Blue background */
+		border: none; /* Remove borders */
+		color: #cbb09c; /* White text */
+		padding: 12px 16px; /* Some padding */
+		font-size: 22px; /* Set a font size */
+		cursor: pointer; /* Mouse pointer on hover */
+		position: relative !important;
+		left: -95px !important;
+		bottom:30px;
+
+		}
+		.i{
+		display:flex-end;
+		position: relative !important;
+		right: -18px !important;
+		top:10px;
+	}
+
+/* Darker background on mouse-over */
+	.btnt:hover {
+  		background-color: RoyalBlue;
+		}
 	  .brand{
 	  	background: #cbb09c !important;
 	  }
@@ -28,38 +57,34 @@ $name=$_SESSION['username']??'Guest';
       position: relative;
       top: -30px;
     }
-		.i{
-
-			position: relative !important;
-			right: -30px !important;
-		}
-		footer .support{
-			position: fixed;
-			bottom: 0px;
-			left: 12px;
-			bottom: 0px;
-			border-radius: 8px 8px 0px 0px;
+	
+	footer .support{
+		position: fixed;
+		bottom: 0px;
+		left: 12px;
+		bottom: 0px;
+		border-radius: 8px 8px 0px 0px;
 
 
-		}
-		footer .Complaints{
-			position: relative !important;
-			left: 10px !important;
-			text-decoration: none !important;
-			color: white;
-		}
-		/* .row{
-			display: flex !important;
-			flex-basis: 200px !important;
-			flex-wrap: wrap !important;
+	}
+	footer .Complaints{
+		position: relative !important;
+		left: 10px !important;
+		text-decoration: none !important;
+		color: white;
+	}
+	/* .row{
+		display: flex !important;
+		flex-basis: 200px !important;
+		flex-wrap: wrap !important;
 
 
-		} */
-		/* .card-content{
+	} */
+	/* .card-content{
 
-			height:200px !important;
-			/* overflow: auto !important ; */
-		} */
+		height:200px !important;
+		/* overflow: auto !important ; */
+	} */
   </style>
 </head>
 <body class="grey lighten-4">

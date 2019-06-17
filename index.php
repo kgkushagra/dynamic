@@ -2,12 +2,22 @@
 
 	include('config/db_connect.php');
 	require_once('templates/header.php');
+	if(isset($_POST['delete'])){
+
+		$id_to_delete = mysqli_real_escape_string($conn, $_POST['title_to_delete']);
+
+		$sql = "DELETE FROM pizzas WHERE title ='$id_to_delete'";
+
+		if(mysqli_query($conn, $sql)){
+			header('Location: index.php');
+		} else {
+			echo 'query error: '. mysqli_error($conn);
+		}
+
+	}
 	
 	
-	// write query for all pizzas
-	//$sql = "SELECT * FROM my_table WHERE id=$_GET[id]";
-  //$result = mysql_query($sql);
-//$row = mysql_fetch_array($result);
+	
 	$sql = "SELECT title,ingredients,id FROM pizzas WHERE id=$_SESSION[id]";
 	
 	// get the result set (set of rows)
@@ -47,9 +57,18 @@
 								<?php endforeach; ?>
 							</ul>
 						</div>
-						<div class="card-action right-align">
-							<a class="brand-text" href="details.php?id=<?php echo $pizza['id'] ?>"><img src="img/i.svg"height="22.5px" class="i"></a>
+						<!-- <span  class="card-action left-align ">
+						<a class="waves-effect waves-light btn">button</a>
+						</span> -->
+						<div class="card-action delbt" >
+							<form action="index.php" method="POST" >
+								<input type="hidden" name="title_to_delete" value="<?php echo $pizza['title']; ?>">
+								<!-- <input type="submit" name="delete" value="Delete" class=""> -->
+								<button class="btnt"><i class="fa fa-trash"></i></button>
+							</form>
+							<span class="right-align i" ><a class=" brand-text " href="details.php?id=<?php echo $pizza['id'] ?>"><img src="img/i.svg"height="22.5px" class="i"></a></span>
 						</div>
+						
 					</div>
 				</div>
 
