@@ -1,7 +1,7 @@
 <?php
 
 	include('config/db_connect.php');
-
+	include('templates/header.php');
 	$email = $title = $ingredients = '';
 	$errors = array('email' => '', 'title' => '', 'ingredients' => '');
 
@@ -44,9 +44,10 @@
 			$email = mysqli_real_escape_string($conn, $_POST['email']);
 			$title = mysqli_real_escape_string($conn, $_POST['title']);
 			$ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
-
+			$user=$_SESSION['username'];
+			$id=$_SESSION['id'];
 			// create sql
-			$sql = "INSERT INTO pizzas(title,email,ingredients) VALUES('$title','$email','$ingredients')";
+			$sql = "INSERT INTO pizzas(title,email,ingredients,username,id) VALUES('$title','$email','$ingredients','$user','$id')";
 
 			// save to db and check
 			if(mysqli_query($conn, $sql)){
@@ -65,7 +66,7 @@
 <!DOCTYPE html>
 <html>
 	
-	<?php include('templates/header.php'); ?>
+	
 
 	<section class="container grey-text">
 		<h4 class="center">Add a Pizza</h4>

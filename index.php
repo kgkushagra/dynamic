@@ -1,20 +1,23 @@
 <?php
 
 	include('config/db_connect.php');
-
-
+	require_once('templates/header.php');
+	
+	
 	// write query for all pizzas
-	$sql = 'SELECT title, ingredients, id FROM pizzas ORDER BY created_at ';
-
+	//$sql = "SELECT * FROM my_table WHERE id=$_GET[id]";
+  //$result = mysql_query($sql);
+//$row = mysql_fetch_array($result);
+	$sql = "SELECT title,ingredients,id FROM pizzas WHERE id=$_SESSION[id]";
+	
 	// get the result set (set of rows)
 	$result = mysqli_query($conn, $sql);
 
 	// fetch the resulting rows as an array
-	$pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	$pizzas = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
 	// free the $result from memory (good practise)
-	mysqli_free_result($result);
-
+	
 	// close connection
 	mysqli_close($conn);
 
@@ -24,10 +27,10 @@
 <!DOCTYPE html>
 <html>
 
-	<?php include('templates/header.php'); ?>
+	
 
 	<h4 class="center grey-text">Pizzas!</h4>
-
+	
 	<div class="container">
 		<div class="row">
 
