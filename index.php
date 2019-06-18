@@ -63,8 +63,9 @@
 						<div class="card-action delbt" >
 							<form action="index.php" method="POST" >
 								<input type="hidden" name="title_to_delete" value="<?php echo $pizza['title']; ?>">
+								
 								<!-- <input type="submit" name="delete" value="Delete" class=""> -->
-								<button class="btnt"><i class="fa fa-trash"></i></button>
+								<button class="btnt" name="delete" value="delete"><i class="fa fa-trash"></i></button>
 							</form>
 							<span class="right-align i" ><a class=" brand-text " href="details.php?id=<?php echo $pizza['id'] ?>"><img src="img/i.svg"height="22.5px" class="i"></a></span>
 						</div>
