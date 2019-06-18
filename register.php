@@ -98,13 +98,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }
+        .brand-text{
+  		color: #cbb09c !important;
+        }
+        .navalign{
+            text-align:center;
+                
+        }
     </style>
 </head>
 <body>
+<nav class="white z-depth-0">
+    <div class="container navalign">
+      <a href="login.php" class="brand-logo brand-text">Ninja Pizza</a>
+      <ul id="nav-mobile" class="right hide-on-small-and-down"></ul>
+    </div>
+  </nav>
+  <br/>
     <div class="wrapper card medium align-middle mx-auto align-middle">
         <h2 class=" text-center">Sign Up</h2>
         <p>Please fill this form to create an account.</p>
